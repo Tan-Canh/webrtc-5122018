@@ -20,38 +20,47 @@
 </head>
 
 <body>
-   <div class="row">
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-         <div class="badge" id="peerID">My ID: </div>
+   <div style="margin-left: 50px" >
+      <div class="row">
+         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="badge" id="peerID">My ID: </div>
+         </div>
       </div>
-   </div>
-   <br />
 
-   <div class="row">
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-         <div class="embed-responsive embed-responsive-16by9">
-            <video id="videoCurrent" controls width="300px"></video>
+      <div class="row">
+         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="badge">List ID</div>
+            <ul id="ulPeerID">
+         </div>
+      </div>
+
+      <br />
+
+      <div class="row">
+         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="videoCurrent" controls width="200px"></video>
+            </div>
+         </div>
+
+         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="videoMyFriend" controls width="200px"></video>
+            </div>
+         </div>
+      </div>
+      <hr />
+
+      <div class="row">
+         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <input type="text" id="txtSignalToken" />
+
+            <button id="btnCall" class="btn btn-outline-success mb-2">Call</button>
          </div>
       </div>
    </div>
-   <hr />
-   <div class="row">
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-         <div class="embed-responsive embed-responsive-16by9">
-            <video id="videoMyFriend" controls width="300px"></video>
-         </div>
-      </div>
-   </div>
 
-   <div class="row">
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-         <input type="text" id="txtSignalToken" />
-
-         <button id="btnCall" class="btn btn-outline-success mb-2">Call</button>
-      </div>
-   </div>
-
-   <script src="./public/bundle.js"></script>
+   <script src="bundle.js"></script>
 
 </body>
 
