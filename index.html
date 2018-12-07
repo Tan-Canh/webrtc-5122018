@@ -8,59 +8,117 @@
 
    <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-
-   <!-- Latest compiled and minified CSS & JS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.16/peer.min.js"></script>
+
+
 
    <title>Stream-Call</title>
 </head>
 
 <body>
-   <div style="margin-left: 50px" >
-      <div class="row">
-         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <div class="badge" id="peerID">My ID: </div>
-         </div>
-      </div>
-
-      <div class="row">
-         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <div class="badge">List ID</div>
-            <ul id="ulPeerID">
-         </div>
-      </div>
-
-      <br />
-
-      <div class="row">
-         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <div class="embed-responsive embed-responsive-16by9">
-               <video id="videoCurrent" controls width="200px"></video>
+   <div id="div-chat">
+      <div style="margin-left: 50px">
+         <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+               <span class="badge badge-info" id="peerID">My ID: </span>
             </div>
          </div>
 
-         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <div class="embed-responsive embed-responsive-16by9">
-               <video id="videoMyFriend" controls width="200px"></video>
+         <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+               <span class="badge badge-success">List Username:</span>
+               <ul id="ulPeerID">
             </div>
          </div>
-      </div>
-      <hr />
 
-      <div class="row">
-         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <input type="text" id="txtSignalToken" />
+         <br />
 
-            <button id="btnCall" class="btn btn-outline-success mb-2">Call</button>
+         <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+               <div class="embed-responsive embed-responsive-16by9">
+                  <video id="videoCurrent" autoplay playsinline width="200px"></video>
+               </div>
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+               <div class="embed-responsive embed-responsive-16by9">
+                  <video id="videoMyFriend" autoplay playsinline width="200px"></video>
+               </div>
+            </div>
+         </div>
+         <hr />
+
+         <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+               <input type="text" id="txtSignalToken" />
+
+               <button id="btnCall" class="btn btn-outline-success mb-2">Call</button>
+            </div>
          </div>
       </div>
    </div>
 
+   <div id="div-signup" >
+
+      <!-- <div class="modal fade" id="exampleModal">
+         <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title">Sign Up</h5>
+                  <button class="close" data-dismiss="modal">
+                     <span>&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <input id="inputUsername" class="form-control" type="text">
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" id="btnSignUp" class="btn btn-primary">Sign Up</button>
+               </div>
+            </div>
+         </div>
+      </div> -->
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" moda tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <div class="form-group">
+                     <label for="inputUsername" class="col-sm-2 control-label">Username:</label>
+                     <div class="col-sm-10">
+                        <input type="text" name="Username" id="inputUsername" class="form-control" value="" required="required"
+                           pattern="" title="">
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" id="btnSignUp" class="btn btn-primary close" data-dismiss="modal" aria-label="Close">Sign Up</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Latest compiled and minified CSS & JS -->
+   <!-- <script src="//code.jquery.com/jquery.js"></script> -->
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <!-- Latest compiled and minified CSS & JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.16/peer.min.js"></script>
+
+
    <script src="./public/bundle.js"></script>
+
 
 </body>
 
